@@ -1,0 +1,15 @@
+{
+  "name": "pug-repl-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro"
+  },
+  "repository": {},
+  "license": "MIT",
+  "dependencies": {
+    "micro": "^7.1.0",
+    "pug": "^2.0.0-beta11",
+    "qs": "^6.4.0"
+  }
+}
