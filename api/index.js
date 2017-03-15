@@ -6,7 +6,7 @@ let url = require('url')
 const getSource = async (req) => {
   let query = qs.parse( url.parse(req.url).query );
   if(query.source){
-    return query.source; 
+    return {source: query.source }; 
   }
 
   let data;
@@ -15,12 +15,17 @@ const getSource = async (req) => {
   } catch(e){
     data = {}
   }
-  return data.source
+  return {source: decodeURIComponent(data.source)}
 }
 
 module.exports = async (req, res) => {
-  let source = await getSource(req);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  
+  let {source} = await getSource(req);
   if(source){
+    // @TODO: get the locals from request and add it here
     let out = pug.compile(source, {})({});
     send(res, 200, { out });
   } else {
