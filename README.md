@@ -16,7 +16,7 @@ Convert Pug ( Previously known as JADE ) Code to HTML
 
 # Contribute
 
-Any contributions including bug reports, PRs are welcome!
+Bug reports and PRs are most welcome!
 
 # Licence
 MIT @ [Shidhin C R](https://twitter.com/shidhincr)
