@@ -1,14 +1,14 @@
 {
-  "name": "pug-repl",
+  "name": "pug-to-html",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:shidhincr/pug-repl.git",
+  "repository": "git@github.com:shidhincr/pug-to-html.git",
   "author": "Shidhin C R <shidhincr@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "webpack -p",
     "dev": "webpack-dev-server",
-    "deploy": "build && gh-pages -d dist"
+    "deploy": "yarn run build && gh-pages -d dist"
   },
   "dependencies": {
     "@material/button": "^0.3.1",
