@@ -1,0 +1,25 @@
+@import '~@material/toolbar/dist/mdc.toolbar.css';
+@import '~@material/typography/dist/mdc.typography.css';
+@import '~@material/layout-grid/dist/mdc.layout-grid.css';
+@import '~@material/card/dist/mdc.card.css';
+@import '~@material/button/dist/mdc.button.css';
+
+body {
+  margin: 0;
+  background-color: #ddd;
+}
+
+.mdc-card {
+  min-height: 75vh;
+  background-color: #fff;
+}
+
+.mdc-card__primary {
+    background: #607d8b;
+    color: #fff;
+    text-align: center;
+}
+
+.actions {
+  text-align: center;
+}
