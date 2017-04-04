@@ -56,7 +56,7 @@ export default class extends Component {
             <span class="mdc-toolbar__title">PUG to HTML Online</span>
           </section>
           <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
-            <a class="mdc-button mdc-button--raised mdc-button--primary" href="">GITHUB</a>
+            <a class="mdc-button mdc-button--raised mdc-button--primary" href="https://github.com/shidhincr/pug-to-html">GITHUB</a>
           </section>
         </header>
         <div class="mdc-layout-grid">
