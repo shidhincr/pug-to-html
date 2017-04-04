@@ -1,5 +1,6 @@
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 let path = require('path');
 
 module.exports = {
@@ -48,6 +49,7 @@ module.exports = {
       template: 'index.ejs',
       hash: true
     }),
-    new ExtractTextPlugin("styles.css")
+    new FaviconsWebpackPlugin('./pug.png'),
+    new ExtractTextPlugin("main.css")
   ]
 }
