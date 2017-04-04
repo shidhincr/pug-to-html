@@ -1,4 +1,5 @@
 let HtmlWebpackPlugin = require('html-webpack-plugin');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let path = require('path');
 
 module.exports = {
@@ -17,23 +18,36 @@ module.exports = {
     fs: "empty"
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
+        options: {
           presets: [['env', {"modules": false}], 'stage-0'],
           plugins: [
             ['transform-react-jsx', {"pragma": "h"}],
             ["transform-runtime"]
           ]
         }
-      }
+      }, 
+      { 
+        test: /\.css$/, 
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
+      },
+      { test: /\.png$/, use: 'url-loader?limit=100000' },
+      { test: /\.jpg$/, use: 'file-loader' }
     ]
   },
-  plugins: [new HtmlWebpackPlugin({
-    title: 'Simple PUG ( Previously known as JADE ) REPL',
-    hash: true
-  })]
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Try PUG ( Previously known as JADE ) to HTML Online',
+      template: 'index.ejs',
+      hash: true
+    }),
+    new ExtractTextPlugin("styles.css")
+  ]
 }
