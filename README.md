@@ -3,7 +3,7 @@ Convert Pug ( Previously known as JADE ) Code to HTML
 
 # ScreenShot
 
-![](http://g.recordit.co/bWMerNbEhA.gif)
+![](https://raw.githubusercontent.com/shidhincr/pug-to-html/master/pug-to-html-low.gif)
 
 # Developement
 
