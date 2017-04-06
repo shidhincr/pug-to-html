@@ -15,20 +15,23 @@ const getSource = async (req) => {
   } catch(e){
     data = {}
   }
-  return {source: decodeURIComponent(data.source)}
+  return {source: decodeURIComponent(data.source), locals: data.locals || {} }
 }
 
 module.exports = async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'https://www.undefinednull.com');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   
-  let {source} = await getSource(req);
-  if(source){
-    // @TODO: get the locals from request and add it here
-    let out = pug.compile(source, {})({});
-    send(res, 200, { out });
-  } else {
-    return '';
+  try{
+    let {source, locals} = await getSource(req);
+    if(source){
+      let out = pug.compile(source, {})(locals);
+      send(res, 200, { out });
+    } else {
+      send(res, 200, { out: '' });
+    }
+  } catch(e){
+    send(res, 403, { out: '' });
   }
 }
