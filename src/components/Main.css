@@ -3,7 +3,6 @@
 @import '~@material/layout-grid/dist/mdc.layout-grid.css';
 @import '~@material/card/dist/mdc.card.css';
 @import '~@material/button/dist/mdc.button.css';
-
 body {
   margin: 0;
   background-color: #eee;
@@ -15,9 +14,9 @@ body {
 }
 
 .mdc-card__primary {
-    background: #607d8b;
-    color: #fff;
-    text-align: center;
+  background: #607d8b;
+  color: #fff;
+  text-align: center;
 }
 
 .actions {

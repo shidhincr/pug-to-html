@@ -10,13 +10,13 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist"),
+    contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
     inline: true
   },
   node: {
-    fs: "empty"
+    fs: 'empty'
   },
   module: {
     rules: [
@@ -25,15 +25,15 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
-          presets: [['env', {"modules": false}], 'stage-0'],
+          presets: [['env', { modules: false }], 'stage-0'],
           plugins: [
-            ['transform-react-jsx', {"pragma": "h"}],
-            ["transform-runtime"]
+            ['transform-react-jsx', { pragma: 'h' }],
+            ['transform-runtime']
           ]
         }
-      }, 
-      { 
-        test: /\.css$/, 
+      },
+      {
+        test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: 'css-loader'
@@ -50,6 +50,6 @@ module.exports = {
       hash: true
     }),
     new FaviconsWebpackPlugin('./pug.png'),
-    new ExtractTextPlugin("main.css")
+    new ExtractTextPlugin('main.css')
   ]
-}
+};
