@@ -6,17 +6,17 @@ Based on the type of change, the pull request template will be different. Load t
 
 Click preview and click on the appropriate template link below to load the template.
 
-- [Bug](?template=bug.md)
-- [Feature](?template=feature.md)
-- [Refactor](?template=refactor.md)
-- [Documentation](?template=docs.md)
-- [Hotfix](?template=hotfix.md)
+- [Bug](?template=bug-template.md&expand=1)
+- [Feature](?template=feature-template.md&expand=1)
+- [Refactor](?template=refactor-template.md&expand=1)
+- [Documentation](?template=docs-template.md&expand=1)
+- [Hotfix](?template=hotfix-template.md&expand=1)
 
-Or you can manually load the template by appending `?template=<template-name>` to the URL of the pull request. Example: &template=bug.md`
+Or you can manually load the template by appending `?template=<template-name>.md` to the URL of the pull request.
 The following are supported:
 
-- `?template=bug.md`
-- `?template=feature.md`
-- `?template=refactor.md`
-- `?template=docs.md`
-- `?template=hotfix.md`
+- ?template=bug.md
+- ?template=feature.md
+- ?template=refactor.md
+- ?template=docs.md
+- ?template=hotfix.md
